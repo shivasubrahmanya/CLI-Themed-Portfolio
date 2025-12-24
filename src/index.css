@@ -1,137 +1,14 @@
-:root {
-  /* Color Palette - Premium Tech Theme */
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
-  /* Slate 900 */
-  --color-primary: #0f172a;
-  --color-primary-foreground: #f8fafc;
-  --color-secondary: #f1f5f9;
-  /* Slate 100 */
-  --color-secondary-foreground: #0f172a;
-  --color-accent: #3b82f6;
-  /* Blue 500 */
-  --color-accent-foreground: #ffffff;
-  --color-muted: #f1f5f9;
-  --color-muted-foreground: #64748b;
-  /* Slate 500 */
-  --color-border: #e2e8f0;
-  /* Slate 200 */
-
-  /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-}
-
+/* Reset default styles */
 * {
   box-sizing: border-box;
+  cursor: text;
+  /* Default cursor for selection */
+}
+
+/* We override body in Terminal.css but let's ensure index.css is clean */
+html,
+body {
   margin: 0;
   padding: 0;
-  border-color: var(--color-border);
-}
-
-body {
-  font-family: var(--font-sans);
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Typography Utilities */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Layout Utilities (replacing common tailwind needs) */
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.gap-4 {
-  gap: 1rem;
-}
-
-.gap-8 {
-  gap: 2rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* Component: Button */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
-}
-
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-primary-foreground);
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-.btn-outline {
-  border-color: var(--color-border);
-  background-color: transparent;
-  color: var(--color-foreground);
-}
-
-.btn-outline:hover {
-  background-color: var(--color-secondary);
-}
-
-.btn-ghost {
-  background-color: transparent;
-  color: var(--color-foreground);
-}
-
-.btn-ghost:hover {
-  background-color: var(--color-secondary);
+  background: #000;
 }

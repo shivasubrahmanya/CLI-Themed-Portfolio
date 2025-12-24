@@ -1,23 +1,19 @@
-import { LayoutWrapper } from "@/components/LayoutWrapper";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { useState } from 'react';
+import { BootSequence } from "./components/Terminal/BootSequence";
+import { Terminal } from "./components/Terminal/Terminal";
 
-const queryClient = new QueryClient();
+const App = () => {
+  const [booted, setBooted] = useState(false);
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <LayoutWrapper>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </LayoutWrapper>
-  </QueryClientProvider>
-);
+  return (
+    <>
+      {!booted ? (
+        <BootSequence onComplete={() => setBooted(true)} />
+      ) : (
+        <Terminal />
+      )}
+    </>
+  );
+};
 
 export default App;
