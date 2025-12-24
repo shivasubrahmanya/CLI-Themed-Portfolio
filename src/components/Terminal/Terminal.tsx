@@ -13,8 +13,28 @@ const HOST = "portfolio";
 
 export const Terminal = () => {
     const [history, setHistory] = useState<HistoryItem[]>([
-        { type: 'output', content: "Welcome to Shivasubrahmanya's Portfolio System v2.0" },
-        { type: 'output', content: "Type 'help' to see available commands." }
+        {
+            type: 'output',
+            content: (
+                <div className="hero-section">
+                    <img
+                        src={fileSystem["home"].children?.["shiva"].children?.["profile.png"].content}
+                        alt="Profile"
+                        className="hero-image"
+                    />
+                    <div className="hero-text">
+                        <div className="hero-name">Shivasubrahmanya K C</div>
+                        <div className="hero-role">Data Science & Machine Learning Engineer</div>
+                        <div className="hero-bio">
+                            Identity Verified.<br />
+                            Specialized in statistical modeling, innovative AI solutions, and transforming raw data into actionable intelligence.<br />
+                            <br />
+                            <span style={{ color: 'var(--term-dim)' }}>Type 'help' to view available commands.</span>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
     ]);
     const [currentPath, setCurrentPath] = useState<string[]>(["home", "shiva"]);
     const [inputValue, setInputValue] = useState("");
